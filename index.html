@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARCANA // Spatial Gesture OS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="bootScreen">
+    <div class="boot-logo">ARCANA</div>
+    <div class="boot-subtitle">SPATIAL GESTURE OPERATING SYSTEM</div>
+
+    <button id="startButton">
+      INITIALIZE CORE
+    </button>
+
+    <div class="boot-info">
+      CAMERA PERMISSION REQUIRED
+    </div>
+  </div>
+
+  <main id="interface" class="hidden">
+
+    <video
+      id="camera"
+      autoplay
+      playsinline
+      muted>
+    </video>
+
+    <canvas id="canvas"></canvas>
+
+    <div id="topHUD">
+      <div>
+        ARCANA // SPATIAL CORE
+      </div>
+
+      <div id="fps">
+        FPS 00
+      </div>
+    </div>
+
+    <div id="status">
+      SEARCHING FOR HANDS
+    </div>
+
+    <div id="leftLabel" class="hand-label">
+      LEFT ARC
+      <span>VOLUME</span>
+    </div>
+
+    <div id="rightLabel" class="hand-label">
+      RIGHT ARC
+      <span>MEDIA</span>
+    </div>
+
+    <div id="systemMessage">
+      PRESENT BOTH HANDS
+    </div>
+
+    <div id="bottomHUD">
+      <span>VISION</span>
+      <span>GESTURE</span>
+      <span>ARC CORE</span>
+      <span>MEDIA</span>
+      <span>AI</span>
+    </div>
+
+  </main>
+
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>

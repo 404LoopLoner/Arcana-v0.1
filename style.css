@@ -1,0 +1,305 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: #02070c;
+  color: #d9f8ff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------------------------
+   BOOT SCREEN
+--------------------------- */
+
+#bootScreen {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #082333 0%,
+      #02070c 45%,
+      #000 100%
+    );
+}
+
+.boot-logo {
+  font-size: clamp(55px, 10vw, 130px);
+  letter-spacing: 18px;
+  font-weight: 200;
+
+  text-shadow:
+    0 0 10px #00d9ff,
+    0 0 30px #00d9ff,
+    0 0 70px #008cff;
+}
+
+.boot-subtitle {
+  margin-top: 20px;
+
+  letter-spacing: 8px;
+  font-size: 12px;
+
+  opacity: 0.7;
+}
+
+#startButton {
+  margin-top: 70px;
+
+  padding: 18px 45px;
+
+  border: 1px solid #00d9ff;
+
+  background: rgba(0, 217, 255, 0.05);
+
+  color: #dffcff;
+
+  letter-spacing: 4px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  box-shadow:
+    0 0 10px rgba(0, 217, 255, 0.2),
+    inset 0 0 10px rgba(0, 217, 255, 0.1);
+}
+
+#startButton:hover {
+  background: rgba(0, 217, 255, 0.15);
+
+  box-shadow:
+    0 0 20px rgba(0, 217, 255, 0.5),
+    inset 0 0 20px rgba(0, 217, 255, 0.15);
+}
+
+.boot-info {
+  position: absolute;
+
+  bottom: 40px;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  opacity: 0.4;
+}
+
+/* ---------------------------
+   MAIN INTERFACE
+--------------------------- */
+
+#interface {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: #000;
+}
+
+#camera {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scaleX(-1);
+
+  opacity: 0.75;
+}
+
+#canvas {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+
+/* ---------------------------
+   TOP HUD
+--------------------------- */
+
+#topHUD {
+  position: absolute;
+
+  top: 25px;
+  left: 40px;
+  right: 40px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  opacity: 0.8;
+}
+
+#fps {
+  color: #6affff;
+}
+
+/* ---------------------------
+   STATUS
+--------------------------- */
+
+#status {
+  position: absolute;
+
+  top: 70px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: 11px;
+
+  letter-spacing: 5px;
+
+  color: #76efff;
+
+  text-shadow: 0 0 10px #00d9ff;
+}
+
+/* ---------------------------
+   HAND LABELS
+--------------------------- */
+
+.hand-label {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 12px;
+
+  letter-spacing: 4px;
+
+  opacity: 0.35;
+}
+
+.hand-label span {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 9px;
+
+  opacity: 0.5;
+}
+
+#leftLabel {
+  left: 40px;
+}
+
+#rightLabel {
+  right: 40px;
+
+  text-align: right;
+}
+
+/* ---------------------------
+   SYSTEM MESSAGE
+--------------------------- */
+
+#systemMessage {
+  position: absolute;
+
+  bottom: 100px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  letter-spacing: 6px;
+
+  font-size: 12px;
+
+  text-shadow:
+    0 0 8px #00d9ff,
+    0 0 20px #008cff;
+}
+
+/* ---------------------------
+   BOTTOM HUD
+--------------------------- */
+
+#bottomHUD {
+  position: absolute;
+
+  bottom: 30px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  gap: 40px;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  opacity: 0.5;
+}
+
+#bottomHUD span {
+  transition: 0.3s;
+}
+
+#bottomHUD span:hover {
+  color: white;
+
+  text-shadow: 0 0 10px #00d9ff;
+}
+
+/* ---------------------------
+   SCANLINES
+--------------------------- */
+
+#interface::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+
+  z-index: 100;
+}
