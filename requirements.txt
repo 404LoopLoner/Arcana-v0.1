@@ -1,0 +1,4 @@
+websockets
+pycaw
+comtypes
+pywin32
